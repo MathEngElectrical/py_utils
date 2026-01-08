@@ -12,7 +12,7 @@ A PEP 8 define um princípio importante:
 
 ## 2) Estilos de nomes (vocabulário)
 
-A PEP 8 lista estilos comuns de nomeação (você precisa reconhecer e aplicar o certo para cada tipo de coisa). :contentReference[oaicite:3]{index=3}
+A PEP 8 lista estilos comuns de nomeação (você precisa reconhecer e aplicar o certo para cada tipo de coisa). 
 
 | Estilo | Exemplo | Uso típico |
 |---|---|---|
@@ -22,11 +22,11 @@ A PEP 8 lista estilos comuns de nomeação (você precisa reconhecer e aplicar o
 | `CapitalizedWords` (CapWords / CamelCase) | `HttpServer` | classes |
 | `mixedCase` | `mixedCase` | raro; normalmente por compatibilidade/legado |
 
-**Acrônimos em classes**: em CapWords, capitalize todas as letras do acrônimo (ex.: `HTTPServerError` melhor que `HttpServerError`). :contentReference[oaicite:4]{index=4}
+**Acrônimos em classes**: em CapWords, capitalize todas as letras do acrônimo (ex.: `HTTPServerError` melhor que `HttpServerError`). 
 
 ## 3) Underscores “especiais” (prefixos/sufixos) e o significado
 
-A PEP 8 reconhece usos convencionais para underscores no começo/fim do nome. :contentReference[oaicite:5]{index=5}
+A PEP 8 reconhece usos convencionais para underscores no começo/fim do nome. 
 
 | Forma | Exemplo | Significado / uso recomendado |
 |---|---|---|
@@ -35,87 +35,85 @@ A PEP 8 reconhece usos convencionais para underscores no começo/fim do nome. :c
 | `__double_leading_underscore` | `__attr` | em atributos de classe: ativa **name mangling** (ex.: `__a` vira `_Classe__a`) |
 | `__double_leading_and_trailing_underscore__` | `__init__` | nomes “mágicos”/especiais; **não inventar**, só usar os documentados |
 
-## 4) Convenções prescritivas por tipo de símbolo (PEP 8)
+## 4) Convenções prescritivas por tipo de símbolo
 
 ### 4.1. Pacotes e módulos
 
-- **Módulos**: nomes curtos, em **minúsculas**; underscore é aceitável se melhorar legibilidade. :contentReference[oaicite:6]{index=6}  
-- **Pacotes**: nomes curtos, em **minúsculas**; underscore é **desencorajado**. :contentReference[oaicite:7]{index=7}  
-- Módulos de extensão C/C++ frequentemente têm **underscore inicial** quando existe um módulo Python “alto nível” por cima (ex.: `_socket`). :contentReference[oaicite:8]{index=8}
+- **Módulos**: nomes curtos, em **minúsculas**; underscore é aceitável se melhorar legibilidade. 
+- **Pacotes**: nomes curtos, em **minúsculas**; underscore é **desencorajado**. 
+- Módulos de extensão C/C++ frequentemente têm **underscore inicial** quando existe um módulo Python “alto nível” por cima (ex.: `_socket`). 
 
 ### 4.2. Classes
 
-- Classes normalmente usam **CapWords**. :contentReference[oaicite:9]{index=9}  
-- Convenção de função (snake_case) pode aparecer como exceção quando a interface é documentada e usada primariamente como “callable”. :contentReference[oaicite:10]{index=10}
+- Classes normalmente usam **CapWords**. 
+- Convenção de função (snake_case) pode aparecer como exceção quando a interface é documentada e usada primariamente como “callable”. 
 
 ### 4.3. Exceções
 
 - Exceções são classes ⇒ **CapWords**.  
-- Use sufixo **`Error`** quando de fato representar um erro. :contentReference[oaicite:11]{index=11}
+- Use sufixo **`Error`** quando de fato representar um erro.
 
 ### 4.4. Funções e variáveis
 
-- **Funções**: minúsculas com palavras separadas por underscore quando necessário (snake_case). :contentReference[oaicite:12]{index=12}  
-- **Variáveis**: seguem a mesma convenção das funções. :contentReference[oaicite:13]{index=13}  
-- `mixedCase` só quando já for o estilo dominante por compatibilidade/legado. :contentReference[oaicite:14]{index=14}
+- **Funções**: minúsculas com palavras separadas por underscore quando necessário (snake_case). 
+- **Variáveis**: seguem a mesma convenção das funções.  
+- `mixedCase` só quando já for o estilo dominante por compatibilidade/legado.
 
 ### 4.5. Argumentos de funções e métodos
 
-- Primeiro argumento de método de instância: **`self`**. :contentReference[oaicite:15]{index=15}  
-- Primeiro argumento de classmethod: **`cls`**. :contentReference[oaicite:16]{index=16}  
-- Se colidir com keyword, prefira underscore no final (`class_`) em vez de abreviar ou “corromper” o nome. :contentReference[oaicite:17]{index=17}
+- Primeiro argumento de método de instância: **`self`**.  
+- Primeiro argumento de classmethod: **`cls`**.
+- Se colidir com keyword, prefira underscore no final (`class_`) em vez de abreviar ou “corromper” o nome. 
 
 ### 4.6. Métodos e atributos de instância
 
-- Métodos: mesmas regras de função (snake_case). :contentReference[oaicite:18]{index=18}  
-- “Não público”: **um underscore inicial** (`_interno`). :contentReference[oaicite:19]{index=19}  
-- Para evitar colisão com subclasses: **dois underscores iniciais** (`__nome`) para acionar *name mangling* (use com parcimônia). :contentReference[oaicite:20]{index=20}
+- Métodos: mesmas regras de função (snake_case). 
+- “Não público”: **um underscore inicial** (`_interno`).  
+- Para evitar colisão com subclasses: **dois underscores iniciais** (`__nome`) para acionar *name mangling* (use com parcimônia). 
 
 ### 4.7. Constantes
 
-- Geralmente em nível de módulo: **UPPER_CASE_WITH_UNDERSCORES**. :contentReference[oaicite:21]{index=21}
+- Geralmente em nível de módulo: **UPPER_CASE_WITH_UNDERSCORES**.
 
 ### 4.8. Globais e `__all__`
 
-- Para módulos pensados para `from M import *`, a PEP 8 recomenda declarar a API pública com **`__all__`** ou usar underscore para marcar globais como não-públicos. :contentReference[oaicite:22]{index=22}  
-- Em geral, módulos devem declarar explicitamente a API pública com `__all__`; `__all__ = []` indica “sem API pública”. :contentReference[oaicite:23]{index=23}  
-- Mesmo com `__all__`, nomes internos devem continuar com underscore inicial. :contentReference[oaicite:24]{index=24}
+- Para módulos pensados para `from M import *`, a PEP 8 recomenda declarar a API pública com **`__all__`** ou usar underscore para marcar globais como não-públicos. 
+- Em geral, módulos devem declarar explicitamente a API pública com `__all__`; `__all__ = []` indica “sem API pública”.  
+- Mesmo com `__all__`, nomes internos devem continuar com underscore inicial. 
 
 ### 4.9. Herança e “público vs não público”
 
-- Se estiver em dúvida, prefira **não público** (mais fácil tornar público depois do que “quebrar” uma API pública). :contentReference[oaicite:25]{index=25}  
-- A PEP 8 evita o termo “privado” (não há privacidade real no Python sem esforço extra). :contentReference[oaicite:26]{index=26}
+- Se estiver em dúvida, prefira **não público** (mais fácil tornar público depois do que “quebrar” uma API pública).   
+- A PEP 8 evita o termo “privado” (não há privacidade real no Python sem esforço extra).
 
 ## 5) Nomes a evitar + compatibilidade ASCII/Unicode
 
 ### 5.1. Nomes a evitar
 
-- Não use `l`, `O` ou `I` como nome de variável de **um caractere** (confunde com `1` e `0`). :contentReference[oaicite:27]{index=27}
+- Não use `l`, `O` ou `I` como nome de variável de **um caractere** (confunde com `1` e `0`).
 
 ### 5.2. ASCII Compatibility (stdlib) e Unicode em identificadores
 
-- A PEP 8 afirma que identificadores usados na **stdlib** precisam ser ASCII-compatíveis conforme a política da PEP 3131. :contentReference[oaicite:28]{index=28}  
-- A PEP 3131 define a política: na stdlib, identificadores devem ser **ASCII-only** e “idealmente” usar palavras em inglês quando possível (com exceções específicas). :contentReference[oaicite:29]{index=29}
-
+- A PEP 8 afirma que identificadores usados na **stdlib** precisam ser ASCII-compatíveis conforme a política da PEP 3131.   
+- A PEP 3131 define a política: na stdlib, identificadores devem ser **ASCII-only** e “idealmente” usar palavras em inglês quando possível (com exceções específicas).
 ## 6) Type hints: nomes recomendados para TypeVars (PEP 8 + PEP 484)
 
 A PEP 8 recomenda:
 
-- Type variables (PEP 484) normalmente usam **CapWords**, preferindo nomes curtos como `T`, `AnyStr`, `Num`. :contentReference[oaicite:30]{index=30}  
+- Type variables (PEP 484) normalmente usam **CapWords**, preferindo nomes curtos como `T`, `AnyStr`, `Num`. 
 - Para variância, use sufixos:
   - `_co` para `covariant=True`
-  - `_contra` para `contravariant=True` :contentReference[oaicite:31]{index=31}
+  - `_contra` para `contravariant=True` 
 
-A PEP 484 também descreve o uso de `TypeVar` com `covariant=True` / `contravariant=True` e exemplifica esse padrão. :contentReference[oaicite:32]{index=32}
+A PEP 484 também descreve o uso de `TypeVar` com `covariant=True` / `contravariant=True` e exemplifica esse padrão. 
 
 ## 7) Docstrings (PEP 257) e o impacto prático em “nomeação”
 
 Docstrings não são “nomeclatura”, mas são parte da **interface pública**: ajudam a documentar o que seu nome representa.
 
-- Docstring é uma string literal como **primeiro statement** de módulo/função/classe/método e vira `__doc__`. :contentReference[oaicite:33]{index=33}  
-- Em geral: módulos devem ter docstrings; funções e classes exportadas também; métodos públicos (incluindo `__init__`) idem. :contentReference[oaicite:34]{index=34}  
-- A PEP 8 recomenda docstrings para tudo que é público e referencia a PEP 257. :contentReference[oaicite:35]{index=35}
-
+- Docstring é uma string literal como **primeiro statement** de módulo/função/classe/método e vira `__doc__`.   
+- Em geral: módulos devem ter docstrings; funções e classes exportadas também; métodos públicos (incluindo `__init__`) idem.   
+- A PEP 8 recomenda docstrings para tudo que é público e referencia a PEP 257. 
 # Tabelas-resumo rápidas
 
 ## A) “O que usar onde”
